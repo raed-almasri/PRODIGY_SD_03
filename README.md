@@ -1,4 +1,4 @@
-# Implement a Simple Contact Management System
+# Simple Contact Management System
 
 ## About
 
