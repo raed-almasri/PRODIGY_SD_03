@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "0d2033b5-da12-4fb6-90d3-c8f508f1dbdf",
+		"name": "Prodigy_Task3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23547594",
+		"_collection_link": "https://yesosteam.postman.co/workspace/Team-Workspace~c0126109-1dda-4c71-892c-9dd3ac0c2f5c/collection/23547594-0d2033b5-da12-4fb6-90d3-c8f508f1dbdf?action=share&source=collection_link&creator=23547594"
+	},
+	"item": [
+		{
+			"name": "contact",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjZGY0MDNlMC03NDgzLTQyNjMtOGM4NS1kMGRiMDI3ZGM0ZDMiLCJpYXQiOjE3MDMzMjEzOTksImV4cCI6MTcxMTA5NzM5OX0.vjvbbqULnNYDXdPYVUq_TGjk3wqnN7QSAdXBjCEMQsA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"11\",\r\n    \"email\":\"raed.almasri.it@gmail.com\",\r\n    \"phone\":\"0988720512\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/contact",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"contact"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjZGY0MDNlMC03NDgzLTQyNjMtOGM4NS1kMGRiMDI3ZGM0ZDMiLCJpYXQiOjE3MDMzMjEzOTksImV4cCI6MTcxMTA5NzM5OX0.vjvbbqULnNYDXdPYVUq_TGjk3wqnN7QSAdXBjCEMQsA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Raed Al Masri2\",\r\n    \"email\":\"raed.almasri.it@gmail.com\",\r\n    \"phone\":\"0988720662\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/contact/5e6d93a7-82ff-4402-a0d5-e6a0237a5fca",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"contact",
+								"5e6d93a7-82ff-4402-a0d5-e6a0237a5fca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjZGY0MDNlMC03NDgzLTQyNjMtOGM4NS1kMGRiMDI3ZGM0ZDMiLCJpYXQiOjE3MDMzMjEzOTksImV4cCI6MTcxMTA5NzM5OX0.vjvbbqULnNYDXdPYVUq_TGjk3wqnN7QSAdXBjCEMQsA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/contact",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"contact"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjZGY0MDNlMC03NDgzLTQyNjMtOGM4NS1kMGRiMDI3ZGM0ZDMiLCJpYXQiOjE3MDMzMjEzOTksImV4cCI6MTcxMTA5NzM5OX0.vjvbbqULnNYDXdPYVUq_TGjk3wqnN7QSAdXBjCEMQsA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/contact/d6992df8-f2a6-4d7b-9be9-26f9cef6aa21",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"contact",
+								"d6992df8-f2a6-4d7b-9be9-26f9cef6aa21"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"raed\",\r\n    \"username\":\"raed_al_masri\",\r\n    \"password\":\"11111111\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"username\":\"raed_al_masri\",\r\n     \"password\":\"11111111\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
