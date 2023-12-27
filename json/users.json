@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "a25387ff-3883-458b-bde3-3af4d8824f5c",
+    "name": "raed",
+    "email": "raed_al_masri@gmail.com",
+    "password": "$2a$12$eqbld94NkrDOvn.WR31yH.p0PV7tr9EUC0YKwIDX82kzVWywQEEfq",
+    "contacts": [
+      {
+        "id": "5c739e67-cb46-4d32-9be4-00bc2b305253",
+        "name": "raed",
+        "email": "raed.almasri.it@gmail.com",
+        "phone": "0988720512"
+      },
+      {
+        "id": "5fae1f4c-4360-4d8a-b9c8-cc6189dfecf3",
+        "name": "raed",
+        "email": "raed.almasri.it@gmail.com",
+        "phone": "0988720112"
+      }
+    ]
+  }
+]

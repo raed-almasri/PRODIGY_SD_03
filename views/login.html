@@ -3,223 +3,145 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Task 3</title>
-        <link rel="stylesheet" href="./css.css" />
+        <title>Test Attack login</title>
+        <link
+            rel="shortcut icon"
+            type="image/x-icon"
+            href="./image/icons8-laptop-96.png"
+        />
     </head>
-    <body>
-        <div class="container" id="container">
-            <div class="form-container sign-up-container">
-                <form action="#">
-                    <h1>Create Account</h1>
-                    <div class="social-container">
-                        <a href="#" class="social"
-                            ><i class="fab fa-facebook-f"></i
-                        ></a>
-                        <a href="#" class="social"
-                            ><i class="fab fa-google-plus-g"></i
-                        ></a>
-                        <a href="#" class="social"
-                            ><i class="fab fa-linkedin-in"></i
-                        ></a>
-                    </div>
-                    <span>or use your email for registration</span>
-                    <input type="text" placeholder="Name" name="signUpName" />
-                    <input
-                        type="email"
-                        placeholder="Email"
-                        name="SignUpEmail"
-                        id="SignUpEmail"
-                    />
-                    <input
-                        type="password"
-                        placeholder="Password"
-                        name="SignUpEmailPassword"
-                        id="SignUpEmailPassword"
-                    />
-                    <button id="signUp">Sign Up</button>
-                </form>
-            </div>
-            <div class="form-container sign-in-container">
-                <form>
-                    <h1>Sign in</h1>
-                    <div class="social-container">
-                        <a href="#" class="social"
-                            ><i class="fab fa-facebook-f"></i
-                        ></a>
-                        <a href="#" class="social"
-                            ><i class="fab fa-google-plus-g"></i
-                        ></a>
-                        <a href="#" class="social"
-                            ><i class="fab fa-linkedin-in"></i
-                        ></a>
-                    </div>
-                    <span>or use your account</span>
-                    <input
-                        type="text"
-                        placeholder="Email"
-                        name="SignInEmail"
-                        id="SignInEmail"
-                    />
-                    <input
-                        type="password"
-                        placeholder="Password"
-                        name="SignInPassword"
-                        id="SignInPassword"
-                    />
+    <link rel="stylesheet" href="./assets/style/login.css" />
 
-                    <button id="signIn" onclick="clickToSignIn()">
-                        Sign In
-                    </button>
-                </form>
-            </div>
-            <div class="overlay-container">
-                <div class="overlay">
-                    <div class="overlay-panel overlay-left">
-                        <h1>Welcome Back!</h1>
-                        <p>
-                            To keep connected with us please login with your
-                            personal info
-                        </p>
-                        <button class="ghost" id="signIn">Sign In</button>
+    <body>
+        <div class="toast__container">
+            <div class="toast__cell">
+                <div class="toast toast--green" hidden="true" id="success">
+                    <div class="toast__icon">
+                        <svg
+                            version="1.1"
+                            class="toast__svg"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            x="0px"
+                            y="0px"
+                            viewBox="0 0 512 512"
+                            style="enable-background: new 0 0 512 512"
+                            xml:space="preserve"
+                        >
+                            <g>
+                                <g>
+                                    <path
+                                        d="M504.502,75.496c-9.997-9.998-26.205-9.998-36.204,0L161.594,382.203L43.702,264.311c-9.997-9.998-26.205-9.997-36.204,0    c-9.998,9.997-9.998,26.205,0,36.203l135.994,135.992c9.994,9.997,26.214,9.99,36.204,0L504.502,111.7    C514.5,101.703,514.499,85.494,504.502,75.496z"
+                                    ></path>
+                                </g>
+                            </g>
+                        </svg>
                     </div>
-                    <div class="overlay-panel overlay-right">
-                        <h1>Hello, Friend!</h1>
-                        <p>
-                            Enter your personal details and start journey with
-                            us
+                    <div class="toast__content">
+                        <p class="toast__type">نجاح العملية</p>
+                        <p class="toast__message">
+                            تمت عملية تسجيل الدخول بنجاح
                         </p>
-                        <button class="ghost" id="signUp">Sign Up</button>
+                    </div>
+                    <div class="toast__close">
+                        <svg
+                            version="1.1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 15.642 15.642"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            enable-background="new 0 0 15.642 15.642"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M8.882,7.821l6.541-6.541c0.293-0.293,0.293-0.768,0-1.061  c-0.293-0.293-0.768-0.293-1.061,0L7.821,6.76L1.28,0.22c-0.293-0.293-0.768-0.293-1.061,0c-0.293,0.293-0.293,0.768,0,1.061  l6.541,6.541L0.22,14.362c-0.293,0.293-0.293,0.768,0,1.061c0.147,0.146,0.338,0.22,0.53,0.22s0.384-0.073,0.53-0.22l6.541-6.541  l6.541,6.541c0.147,0.146,0.338,0.22,0.53,0.22c0.192,0,0.384-0.073,0.53-0.22c0.293-0.293,0.293-0.768,0-1.061L8.882,7.821z"
+                            ></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <div
+                    class="toast toast--blue add-margin"
+                    hidden="true"
+                    id="inputError"
+                >
+                    <div class="toast__icon">
+                        <svg
+                            version="1.1"
+                            class="toast__svg"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            x="0px"
+                            y="0px"
+                            viewBox="0 0 32 32"
+                            style="enable-background: new 0 0 32 32"
+                            xml:space="preserve"
+                        >
+                            <g>
+                                <g id="info">
+                                    <g>
+                                        <path
+                                            d="M10,16c1.105,0,2,0.895,2,2v8c0,1.105-0.895,2-2,2H8v4h16v-4h-1.992c-1.102,0-2-0.895-2-2L20,12H8     v4H10z"
+                                        ></path>
+                                        <circle cx="16" cy="4" r="4"></circle>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="toast__content">
+                        <p class="toast__type">ادخال خاطئ</p>
+                        <p class="toast__message" id="Error_message">
+                            يجب تعبئة جميع الحقول الموجودة
+                        </p>
+                    </div>
+
+                    <div class="toast__close">
+                        <svg
+                            version="1.1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 15.642 15.642"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            enable-background="new 0 0 15.642 15.642"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M8.882,7.821l6.541-6.541c0.293-0.293,0.293-0.768,0-1.061  c-0.293-0.293-0.768-0.293-1.061,0L7.821,6.76L1.28,0.22c-0.293-0.293-0.768-0.293-1.061,0c-0.293,0.293-0.293,0.768,0,1.061  l6.541,6.541L0.22,14.362c-0.293,0.293-0.293,0.768,0,1.061c0.147,0.146,0.338,0.22,0.53,0.22s0.384-0.073,0.53-0.22l6.541-6.541  l6.541,6.541c0.147,0.146,0.338,0.22,0.53,0.22c0.192,0,0.384-0.073,0.53-0.22c0.293-0.293,0.293-0.768,0-1.061L8.882,7.821z"
+                            ></path>
+                        </svg>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="login-box">
+            <h2>Login</h2>
+            <form method="post">
+                <div class="user-box">
+                    <input
+                        type="email"
+                        name="username"
+                        id="email"
+                        required="true"
+                    />
+                    <label>email</label>
+                </div>
+                <div class="user-box">
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        required="true"
+                    />
+                    <label>Password</label>
+                </div>
+                <a onclick="submitLogin()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Submit
+                </a>
+            </form>
+        </div>
     </body>
-    <!-- <footer id="footer" class="footer">
-            <div class="container">
-                <div class="row gy-4">
-                    <div class="col-lg-5 col-md-12 footer-info">
-                        <a
-                            href="https://prodigyinfotech.dev/"
-                            class="logo d-flex align-items-center"
-                        >
-                            <span>
-                                <h3><b>Prodigy</b></h3>
-                            </span>
-                        </a>
-                        <p>
-                            Software Development Intern at Prodigy InfoTech.This
-                            is an educational internship. As a valued member of
-                            our team, you will have the opportunity to gain
-                            hands-on experience in this field.
-                        </p>
-                        <div class="social-links d-flex mt-4">
-                            <a href="#" class="twitter"
-                                ><i class="bi bi-twitter"></i
-                            ></a>
-                            <a href="#" class="facebook"
-                                ><i class="bi bi-facebook"></i
-                            ></a>
-                            <a href="#" class="instagram"
-                                ><i class="bi bi-instagram"></i
-                            ></a>
-                            <a href="#" class="linkedin"
-                                ><i class="bi bi-linkedin"></i
-                            ></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-6 footer-links">
-                        <h4>Projects Links</h4>
-                        <ul>
-                            <li>
-                                <a
-                                    href="https://github.com/raedAlmasriIt/Farm-Management-System"
-                                    >Farm-Management-System</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="https://github.com/raedAlmasriIt/Note-Keeper"
-                                    >Note-Keeper</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="https://github.com/raedAlmasriIt/Bot-Telegram-translate-Js"
-                                    >Bot-Telegram-translate</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="https://github.com/raedAlmasriIt/Chunking-Music"
-                                >
-                                    Chunking-Music
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-2 col-6 footer-links">
-                        <h4>Our Services</h4>
-                        <ul>
-                            <li>
-                                <a
-                                    href="https://www.linkedin.com/in/raed-al-masri/"
-                                    >Web Design</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="https://www.linkedin.com/in/raed-al-masri/"
-                                    >Web Development</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="https://www.linkedin.com/in/raed-al-masri/"
-                                    >Backend developer</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="https://www.linkedin.com/in/raed-al-masri/"
-                                    >database management</a
-                                >
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div
-                        class="col-lg-3 col-md-12 footer-contact text-center text-md-start"
-                    >
-                        <h4>Contact Us</h4>
-                        <p>
-                            Raed Al Masri <br />
-                            Syria , Homs <br />
-                            <strong>Phone:</strong>
-                            <a href="tel:+963988720553">+963 988720553</a><br />
-                            <strong>Email:</strong>
-                            <a href="mailto:raed.al.masri.it@gmail.com"
-                                >raed.al.masri.it@gmail.com</a
-                            ><br />
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container mt-4">
-                <div class="copyright">
-                    &copy; Copyright <strong><span>Prodigy</span></strong> All
-                    Rights Reserved
-                </div>
-                <div class="credits">
-                    Designed by
-                    <a href="https://www.linkedin.com/in/raed-al-masri/">
-                        Raed Al Masri</a
-                    >
-                </div>
-            </div>
-        </footer> -->
-
-    <script src="./js.js"></script>
+    <script src="./assets/script/login.js"></script>
 </html>

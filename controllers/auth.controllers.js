@@ -17,14 +17,15 @@ export default {
             let rawData = await readFileJson("/json/users.json");
             if (
                 rawData.find(
-                    (element) => element.username === req.body.username.trim()
+                    (element) => element.email.trim() === req.body.email.trim()
                 )
             )
-                throw new Error("Username already found");
+                throw new Error("email already found");
             let generatedId = uuidv4();
             rawData.push({
                 id: generatedId,
                 ...req.body,
+                contacts: [],
                 password: bcrypt(req.body.password),
             });
 
@@ -59,12 +60,11 @@ export default {
      */
     login: async (req, res) => {
         try {
-            console.log(1222);
             let rawData = await readFileJson("/json/users.json");
             let userInfo = rawData.find(
-                (element) => element.username === req.body.username.trim()
+                (element) => element.email === req.body.email.trim()
             );
-            if (!userInfo) throw new Error("username is incorrect");
+            if (!userInfo) throw new Error("email is incorrect");
 
             const validPassword = await compare(
                 req.body.password,

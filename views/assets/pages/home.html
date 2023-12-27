@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>All Users</title>
+        <link rel="stylesheet" href="../style/home.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"
+        ></script>
+        <link
+            rel="shortcut icon"
+            type="image/x-icon"
+            href="../image/icons8-laptop-96.png"
+        />
+    </head>
+
+    <body style="background-color: #1f2739">
+        <!-- toast -->
+        <div class="toast__container">
+            <div class="toast__cell">
+                <div
+                    class="toast toast--blue add-margin"
+                    hidden="true"
+                    id="inputError"
+                >
+                    <div class="toast__icon">
+                        <svg
+                            version="1.1"
+                            class="toast__svg"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            x="0px"
+                            y="0px"
+                            viewBox="0 0 32 32"
+                            style="enable-background: new 0 0 32 32"
+                            xml:space="preserve"
+                        >
+                            <g>
+                                <g id="info">
+                                    <g>
+                                        <path
+                                            d="M10,16c1.105,0,2,0.895,2,2v8c0,1.105-0.895,2-2,2H8v4h16v-4h-1.992c-1.102,0-2-0.895-2-2L20,12H8     v4H10z"
+                                        ></path>
+                                        <circle cx="16" cy="4" r="4"></circle>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="toast__content">
+                        <p class="toast__type">Error</p>
+                        <p class="toast__message" id="Error_message">
+                            every fields should not empty
+                        </p>
+                    </div>
+
+                    <div class="toast__close">
+                        <svg
+                            version="1.1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 15.642 15.642"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            enable-background="new 0 0 15.642 15.642"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M8.882,7.821l6.541-6.541c0.293-0.293,0.293-0.768,0-1.061  c-0.293-0.293-0.768-0.293-1.061,0L7.821,6.76L1.28,0.22c-0.293-0.293-0.768-0.293-1.061,0c-0.293,0.293-0.293,0.768,0,1.061  l6.541,6.541L0.22,14.362c-0.293,0.293-0.293,0.768,0,1.061c0.147,0.146,0.338,0.22,0.53,0.22s0.384-0.073,0.53-0.22l6.541-6.541  l6.541,6.541c0.147,0.146,0.338,0.22,0.53,0.22c0.192,0,0.384-0.073,0.53-0.22c0.293-0.293,0.293-0.768,0-1.061L8.882,7.821z"
+                            ></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            data-bs-whatever="@mdo"
+        >
+            Open modal for @mdo
+        </button>
+
+        <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                            New message
+                        </h1>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label
+                                    for="recipient-name"
+                                    class="col-form-label"
+                                    >Recipient:</label
+                                >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="recipient-name"
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label for="message-text" class="col-form-label"
+                                    >Message:</label
+                                >
+                                <textarea
+                                    class="form-control"
+                                    id="message-text"
+                                ></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            Close
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                            Send message
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- toast -->
+        <h1><span class="yellow">Contact Info</span></h1>
+        <button id="logout">Log out</button>
+
+        <button id="searchBtn" class="search-btn">بحث</button>
+
+        <table class="container">
+            <thead>
+                <tr>
+                    <th>
+                        <h1>ID</h1>
+                    </th>
+                    <th>
+                        <h1>Name</h1>
+                    </th>
+                    <th>
+                        <h1>Email</h1>
+                    </th>
+                    <th>
+                        <h1>Phone</h1>
+                    </th>
+                    <th>
+                        <h1>Tools</h1>
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="bodyTable"></tbody>
+        </table>
+
+        <script src="../script/home.js"></script>
+    </body>
+</html>
